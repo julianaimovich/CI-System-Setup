@@ -29,12 +29,4 @@ class CashbackHackServiceTest {
         int actualResult = cashbackHackService.remain(1000);
         assertEquals(expectedResult, actualResult);
     }
-
-    @Test
-    void shouldReturn1000IfAmountIsZero() {
-        CashbackHackService cashbackHackService = new CashbackHackService();
-        int expectedResult = 1000;
-        int actualResult = cashbackHackService.remain(0);
-        assertEquals(expectedResult, actualResult);
-    }
 }
