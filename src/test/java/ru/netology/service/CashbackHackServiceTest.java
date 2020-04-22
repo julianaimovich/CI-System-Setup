@@ -1,6 +1,7 @@
 package ru.netology.service;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -28,5 +29,11 @@ class CashbackHackServiceTest {
         int expectedResult = 0;
         int actualResult = cashbackHackService.remain(1000);
         assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    void shouldReturnExceptionIfAmountIsZeroOrLower() {
+        CashbackHackService cashbackHackService = new CashbackHackService();
+        assertThrows(IllegalArgumentException.class, () -> cashbackHackService.remain(0));
     }
 }
