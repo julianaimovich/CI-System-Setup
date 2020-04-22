@@ -1,0 +1,4 @@
+amount, expectedResult
+900, 100
+995, 5
+1000, 0
