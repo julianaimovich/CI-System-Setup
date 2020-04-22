@@ -1,5 +1,6 @@
 package ru.netology.service;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
@@ -8,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CashbackHackServiceTest {
 
     @Test
+    @DisplayName("Should return 100 if amount is 900")
     void shouldReturn100IfAmountIs900() {
     CashbackHackService cashbackHackService = new CashbackHackService();
     int expectedResult = 100;
@@ -16,6 +18,7 @@ class CashbackHackServiceTest {
     }
 
     @Test
+    @DisplayName("Should return 5 if amount is 995")
     void shouldReturn5IfAmountIs995() {
         CashbackHackService cashbackHackService = new CashbackHackService();
         int expectedResult = 5;
@@ -24,6 +27,7 @@ class CashbackHackServiceTest {
     }
 
     @Test
+    @DisplayName("Should return 0 if amount is 1000")
     void shouldReturnZeroIfAmountIs1000() {
         CashbackHackService cashbackHackService = new CashbackHackService();
         int expectedResult = 0;
@@ -32,7 +36,8 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    void shouldReturnExceptionIfAmountIsZeroOrLower() {
+    @DisplayName("Should throw exception if amount is 0 or lower")
+    void shouldThrowExceptionIfAmountIsZeroOrLower() {
         CashbackHackService cashbackHackService = new CashbackHackService();
         assertThrows(IllegalArgumentException.class, () -> cashbackHackService.remain(0));
     }
